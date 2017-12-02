@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="description" content="Projet ISN Pacman" />
+<link rel="icon" type="image/png" href="images/fantome/red.png"/>
+<title>Pacman - Main</title>
+<link rel="stylesheet" href="reset.css" type="text/css"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+<body>
+<div class="Haut">
+	<div class="Haut_navbar">
+	<ul>
+		<li><a href="index.html">Accueil</a></li>
+		<li><a href="comment.html">Comment jouer?</a></li>
+		<li><a href="jouer.html">Jouer !</a></li>
+		<li><a href="propos.html">A Propos</a></li>
+	</ul>
+	</div>
+</div>
+
+<div class="page">
+<img src="logo.png" style="margin-left: auto;margin-right: auto;" alt="logo"/>
+<h2>Bienvenue sur le site du projet d'ISN</h2>
+<br/><br/><br/><br/>
+<p>de Lucas Renaud, Thomas Nguyen, Florian Bringé et Montagnoli Valentin</p>
+</div>
+<script type="text/javascript">
+function supprimecookieavecalert() {
+	creercookie(0,-1);
+	alert("Cookie supprimé !");
+}
+function creercookie(nombre,jour) {
+		var date = new Date();
+		date.setTime(date.getTime()+(jour*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	document.cookie = "tspacmanisn="+nombre+expires+"; path=/";
+}
+
+function lirecookie() {
+	var nomdenotrecookie = "tspacmanisn=";
+	var noscookie = document.cookie.split(';');
+	for(var i=0;i < noscookie.length;i++) {
+		var c = noscookie[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nomdenotrecookie) == 0) return parseInt(c.substring(nomdenotrecookie.length,c.length));
+	}
+	return 0;
+}
+
+function supprimecookie() {
+	creercookie(0,-1);
+}
+
+</script>
+<noscript><h2>Navigateur non compatible ! :(</h2></noscript>
+<div class="Bas-box">
+	<div class="Bas-right">
+		<p>En utilisant ce site, vous acceptez que les cookies soient utilisés à des fins d'analyse, de pertinence et de publicité. </p>
+		<p><a href="javascript:supprimecookieavecalert()">> Cliquez ici pour supprimer le cookie généré par le jeu ! (high score)</a></p>
+	
+	</div>
+</div>
+
+</body>
+                                    
+</html>
